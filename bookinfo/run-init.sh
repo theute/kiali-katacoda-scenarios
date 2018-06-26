@@ -1,5 +1,12 @@
 #!/bin/bash
 ssh root@host01 "service origin stop"
+ssh root@host01 "mkdir /root/installation/bin"
+ssh root@host01 "wget -c https://github.com/openshift-istio/origin/releases/download/istio-3.9-0.8.0-alpha3/istiooc_linux -O /root/installation/bin/istiooc"
+ssh root@host01 "chmod u+x /root/installation/bin/istiooc"
+ssh root@host01 "export PATH=/root/installation/bin:$PATH"
+
+
+#istiooc cluster up --istio-kiali-username=admin --istio-kiali-password=admin --master-config=/openshift.local.config/master/master-config.yaml --node-config=/openshift.local.config/node-%H/node-config.yaml --dns=tcp://0.0.0.0:8053
 
 #!/bin/bash
 #ssh root@host01 "wget -c https://github.com/istio/istio/releases/download/0.7.1/istio-0.7.1-linux.tar.gz -P /root/installation"
