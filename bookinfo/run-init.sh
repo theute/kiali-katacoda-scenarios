@@ -1,4 +1,5 @@
 #!/bin/bash
+ssh root@host01 "service origin stop"
 
 #!/bin/bash
 #ssh root@host01 "wget -c https://github.com/istio/istio/releases/download/0.7.1/istio-0.7.1-linux.tar.gz -P /root/installation"
